@@ -1,0 +1,76 @@
+/* Mixins */
+
+@mixin sticky-footer{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin media-max($max-width) {
+  @media only screen and (max-width: $max-width) {
+     @content; 
+    }
+}
+@mixin media-min($min-width) {
+  @media only screen and (min-width: $min-width) {
+     @content; 
+    }
+}
+
+
+@mixin list-unstyle{
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin link-unstyle($display:inline-block) {
+  display: $display;
+  text-decoration: none;
+}
+
+
+@mixin  bgRetinaImages{
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin typography-styles($style:normal, $size:16px, $line-height:1.15,$weight:400, $text-align:left, $color:#000) {
+  font-style: $style;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  text-align: $text-align;
+  color: $color;
+}
+
+%text-end{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%button-unstyle{
+  background-color: transparent;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
